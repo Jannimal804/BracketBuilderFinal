@@ -31,7 +31,24 @@ state = {
   render() {
     return (
         <Container>
-            <h1>Here</h1>
+            <ListGroup>
+                {this.state.allCompetitors.map(allCompetitors => {
+                  return (
+                    <ListGroupItem key={allCompetitors._id}>
+                      <a href={allCompetitors._id}>
+                        <strong>
+                           {allCompetitors.firstName}
+                          {/* {book.title} by {book.author} */}
+                        </strong>
+                      </a>
+                      {/* <Button onClick={() => this.deleteBook(book._id)} /> */}
+                    </ListGroupItem>
+                     )
+                    })}
+                  </ListGroup>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
         </Container>
     );
   }

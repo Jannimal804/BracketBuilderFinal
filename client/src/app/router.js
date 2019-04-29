@@ -7,7 +7,6 @@ import axios from 'axios';
 import MainLayoutRoutes from "../layouts/routes/mainRoutes";
 import FullPageLayout from "../layouts/routes/fullpageRoutes";
 import ErrorLayoutRoute from "../layouts/routes/errorRoutes";
-
 //custom pages
 //import CompetitorPage from "../views/pages/competitorpage";
 

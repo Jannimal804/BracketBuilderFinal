@@ -4,27 +4,32 @@ import ContentHeader from "../../components/contentHead/contentHeader";
 //import ContentSubHeader from "../../components/contentHead/contentSubHeader";
 import CompetitorList from "../../components/competitor/competitor";
 import axios from "axios";
+import { Row, Col, Container, ListGroup, ListGroupItem, Input, Media, Button, Jumbotron  } from "reactstrap";
+
 
 class blankPage extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-        allCompetitors: null
-      };
+   state = {
+      allCompetitors: null
    }
-   componentDidMount(){
-      axios.get("/api/competitors",function(response) {
-         console.log(response);
-         this.setState({allCompetitors: response});
-      });
-      
+   componentDidMount() {
+      console.log("here");
+      const self = this;
+      axios.get("/api/competitors").then(function(res) {
+         console.log(res.data)
+            self.setState({allCompetitors: res.data});
+         });     
    }
+
    render() {
       return (
+         
          <Fragment>
-            <ContentHeader>Matches</ContentHeader>
-            <CompetitorList allCompetitors={this.state.allCompetitors}
+             <ContentHeader>Matches</ContentHeader>
+            <CompetitorList
             />
+            {this.state.map(user => {
+               return user["firstName"]
+            })} 
          </Fragment>
       );
    }
