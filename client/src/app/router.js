@@ -9,6 +9,7 @@ import FullPageLayout from "../layouts/routes/fullpageRoutes";
 import ErrorLayoutRoute from "../layouts/routes/errorRoutes";
 //custom pages
 //import CompetitorPage from "../views/pages/competitorpage";
+import CompetitorList from "../components/competitor/competitor"
 
 // Main Layout
 const LazyEcommerceDashboard = lazy(() => import("../views/dashboard/ecommerceDashboard"));
@@ -462,6 +463,15 @@ class Router extends Component {
                />
                <MainLayoutRoutes
                   exact
+                  path="/components/competitor/competitor"
+                  render={matchprops => (
+                     <Suspense fallback={<Spinner />}>
+                        <LazySwitches {...matchprops} />
+                     </Suspense>
+                  )}
+               />
+               <MainLayoutRoutes
+                  exact
                   path="/components/extra/toastr"
                   render={matchprops => (
                      <Suspense fallback={<Spinner />}>
@@ -768,6 +778,15 @@ class Router extends Component {
                <MainLayoutRoutes
                   exact
                   path="/pages/gallery"
+                  render={matchprops => (
+                     <Suspense fallback={<Spinner />}>
+                        <LazyGallery {...matchprops} />
+                     </Suspense>
+                  )}
+               />
+               <MainLayoutRoutes
+                  exact
+                  path="/pages/competitormatches"
                   render={matchprops => (
                      <Suspense fallback={<Spinner />}>
                         <LazyGallery {...matchprops} />

@@ -2,14 +2,14 @@
 import React, { Component, Fragment } from "react";
 import ContentHeader from "../../components/contentHead/contentHeader";
 //import ContentSubHeader from "../../components/contentHead/contentSubHeader";
-import CompetitorList from "../../components/competitor/competitor";
+//import CompetitorList from "../../components/competitor/competitor";
 import axios from "axios";
-import { Row, Col, Container, ListGroup, ListGroupItem, Input, Media, Button, Jumbotron  } from "reactstrap";
+import API from "../../utility/API";
 
 
 class blankPage extends Component {
    state = {
-      allCompetitors: null
+      allCompetitors: []
    }
    componentDidMount() {
       console.log("here");
@@ -20,15 +20,23 @@ class blankPage extends Component {
          });     
    }
 
+   loadUsers = () => {
+      API.getCompetitors()
+        .then(res =>
+          this.setState({ users: res.data, firstName: "", lastName: "" })
+        )
+        .catch(err => console.log(err));
+    };
+
    render() {
       return (
          
          <Fragment>
              <ContentHeader>Matches</ContentHeader>
-            <CompetitorList
-            />
-            {this.state.map(user => {
-               return user["firstName"]
+            {this.state.allCompetitors.map(allCompetitors => {
+               return(
+                  <h1>{[allCompetitors.firstName]}</h1>
+               ) 
             })} 
          </Fragment>
       );
