@@ -62,7 +62,7 @@ render() {
                   <Col xs="5">
                      <div className="align-self-start halfway-fab pl-4 pt-10">
                         <div className="text-left">
-                           <h1 className="card-title text-white"><b>Rikako Yuasa</b></h1>
+                           <h1 className="card-title text-white" ><b>Rikako Yuasa</b></h1>
                         </div>
                      </div>
                   </Col>

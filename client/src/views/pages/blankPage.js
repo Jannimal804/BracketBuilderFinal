@@ -5,7 +5,11 @@ import ContentHeader from "../../components/contentHead/contentHeader";
 //import CompetitorList from "../../components/competitor/competitor";
 import axios from "axios";
 import API from "../../utility/API";
-
+import {
+   Card,
+   CardTitle,
+   CardSubtitle
+} from "reactstrap";
 
 class blankPage extends Component {
    state = {
@@ -23,7 +27,7 @@ class blankPage extends Component {
    loadUsers = () => {
       API.getCompetitors()
         .then(res =>
-          this.setState({ users: res.data, firstName: "", lastName: "" })
+          this.setState({ users: res.data, firstName: "", lastName: "", beltLevel: "", weightClass:"" })
         )
         .catch(err => console.log(err));
     };
@@ -35,7 +39,11 @@ class blankPage extends Component {
              <ContentHeader>Matches</ContentHeader>
             {this.state.allCompetitors.map(allCompetitors => {
                return(
-                  <h1>{[allCompetitors.firstName]}</h1>
+                  <Card>
+                  <CardTitle>{allCompetitors.firstName} {allCompetitors.lastName}</CardTitle>
+                  <CardSubtitle>{allCompetitors.beltLevel}</CardSubtitle>
+                  <CardSubtitle>{allCompetitors.weightClass}</CardSubtitle>
+               </Card>
                ) 
             })} 
          </Fragment>

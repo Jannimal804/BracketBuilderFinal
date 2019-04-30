@@ -9,7 +9,8 @@ import FullPageLayout from "../layouts/routes/fullpageRoutes";
 import ErrorLayoutRoute from "../layouts/routes/errorRoutes";
 //custom pages
 //import CompetitorPage from "../views/pages/competitorpage";
-import CompetitorList from "../components/competitor/competitor"
+//import CompetitorList from "../components/competitor/competitor"
+//import MatchesPage from "../views/pages/matches";
 
 // Main Layout
 const LazyEcommerceDashboard = lazy(() => import("../views/dashboard/ecommerceDashboard"));
@@ -74,7 +75,13 @@ const LazyHorizontalTimeline = lazy(() => import("../views/pages/horizontalTimel
 const LazyVerticalTimeline = lazy(() => import("../views/pages/verticalTimeline"));
 const LazyUserProfile = lazy(() => import("../views/pages/userProfile"));
 
+
+
 const CompetitorPage = lazy(() => import("../views/pages/competitorpage"));
+const MatchesPage = lazy(() => import("../views/pages/matches"));
+
+
+
 
 const LazyInvoice = lazy(() => import("../views/pages/invoice"));
 const LazyGallery = lazy(() => import("../views/pages/gallery"));
@@ -95,12 +102,12 @@ const LazyLockScreen = lazy(() => import("../views/pages/lockScreen"));
 const LazyErrorPage = lazy(() => import("../views/pages/error"));
 
 class Router extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-        Competitors: []
-      };
-    }
+   // constructor(props) {
+   //    super(props);
+   //    this.state = {
+   //      Competitors: []
+   //    };
+   //  }
    componentDidMount() {
       axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
       // axios.get('/api/competitors')
@@ -138,8 +145,19 @@ class Router extends Component {
                   )}
                />
           
-          
-            <MainLayoutRoutes exact path="/competitorPage" component={CompetitorPage} />
+          <MainLayoutRoutes exact path="/competitorPage" component={CompetitorPage} />
+         <MainLayoutRoutes exact path="/matches" component={MatchesPage} />
+
+
+            <MainLayoutRoutes
+                  exact
+                  path="/analytics"
+                  render={matchprops => (
+                     <Suspense fallback={<Spinner />}>
+                        <LazyBlankPage {...matchprops} />
+                     </Suspense>
+                  )}
+               />
 
             
                <MainLayoutRoutes
@@ -759,7 +777,7 @@ class Router extends Component {
                />
                <MainLayoutRoutes
                   exact
-                  path="/pages/change-log"
+                  path="/pages/matches"
                   render={matchprops => (
                      <Suspense fallback={<Spinner />}>
                         <LazyChangeLogPage {...matchprops} />

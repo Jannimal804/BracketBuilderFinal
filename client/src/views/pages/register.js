@@ -172,7 +172,7 @@ class Register extends Component {
                                        </FormGroup>
                                        <FormGroup>
                                        <Col md="12">
-                                          <Input type="select" id="weightClass" name="weightClass" className="form-control" value={beltLevel} onChange={this.onChange}>
+                                          <Input type="select" id="weightClass" name="weightClass" className="form-control" value={weightClass} onChange={this.onChange}>
                                              <option value="none" defaultValue="" disabled="">Weight Class</option>
                                              <option value="Light Feather">Light Feather – 53.5 kg (118 lbs)</option>
                                              <option value="Feather">Feather – 58.5 kg (129 lbs)</option>

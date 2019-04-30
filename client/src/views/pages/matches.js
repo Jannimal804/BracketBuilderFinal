@@ -38,7 +38,7 @@ class MatchesPage extends Component {
          
          <Fragment>
              <ContentHeader>Here</ContentHeader>
-             <ContentHeader>Betch</ContentHeader>
+             <ContentHeader>Matches Betch a letch</ContentHeader>
             {this.state.allCompetitors.map(allCompetitors => {
              return(
                   <Card>
@@ -50,6 +50,23 @@ class MatchesPage extends Component {
               } )} 
          </Fragment>
       );
+
+      
+      function Match({ match}) {
+         if (!match) {
+           return null;
+         }
+       
+         if (!match.length) {
+           return <p>Sorry, the list is empty.</p>;
+         } else {
+           return (
+             <div>
+               {match.map(allCompetitors => <ListItem { }/>)}
+             </div>
+           );
+         }
+       }
    }
 }
 
