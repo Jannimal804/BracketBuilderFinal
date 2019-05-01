@@ -103,29 +103,40 @@ render() {
             </Card>
          </Col>
       </Row>  
-      <Row>
-      <div className= "list-group col-6">
-      <div>
-            <h1><b>Competitor Data:</b></h1>
-            <ListGroup>
-            <ListGroupItem>Black Belt</ListGroupItem>
-            <ListGroupItem>Light Feather</ListGroupItem>
-            <ListGroupItem>Team/Association: Paraestra</ListGroupItem>
-            <ListGroupItem>Favourite Position/Technique: Lasso Guard/Open Guard</ListGroupItem>
-               <ListGroupItem>IBJJF World Champion (2018/2017/2016/2015)</ListGroupItem>
-               <ListGroupItem>IBJJF Asian Championship 2nd Place (2015)</ListGroupItem>
-            </ListGroup>
 
-            <Col slg="6" className= "align-self-right">
-                  <ProjectStatsDonutChartCard
+      <Row className="row-eq-height">
+         <Col sm="12" md="6">
+            <Card>
+               <CardBody>
+                  <CardTitle>Competitor Data</CardTitle>
+                  <ListGroup>
+                  <ListGroupItem>Belt Level: Black Belt</ListGroupItem>
+                  <ListGroupItem>Weight Class: Light Feather</ListGroupItem>
+                  <ListGroupItem>Team/Association: Paraestra</ListGroupItem>
+                  <ListGroupItem>Favourite Position/Technique: Lasso Guard/Open Guard</ListGroupItem>
+                  <ListGroupItem>IBJJF World Champion (2018/2017/2016/2015)</ListGroupItem>
+                  <ListGroupItem>IBJJF Asian Championship 2nd Place (2015)</ListGroupItem>
+                  </ListGroup>
+               </CardBody>
+            </Card>
+         </Col>
+         <Col sm="12" md="6">
+            <Card>
+               <CardBody>
+               <CardTitle>
+                  Submission Stats
+               </CardTitle>
+                <ProjectStatsDonutChartCard
                      projectStatsDonutChartData={AdvancedCardData.ProjectStatsDonutChartData}
-                     cardTitle="Submission Stats"
+                     // cardTitle="Submission Stats"
                      cardSubTitle="Year to Date (all belt levels)"
                   />
-               </Col>
-
-         </div>
-      </div>
+                  </CardBody>
+            </Card>
+         </Col>
+      </Row>
+      <Row>
+      
       </Row>
       <h1>Upcoming Events:</h1>
       <Row className="row-eq-height">
@@ -136,7 +147,8 @@ render() {
                         <CardTitle>US Grappling</CardTitle>
                         <CardSubtitle>April 27th, 2019</CardSubtitle>
                         <CardText>
-Gi and no gi divisions!                        </CardText>
+                        Gi and no gi divisions! Ages 4 and up.                    
+                        </CardText>
                         <Button className="gradient-purple-bliss">Interested</Button>{" "}
                      </CardBody>
                   </Card>
