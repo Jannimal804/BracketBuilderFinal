@@ -17,6 +17,12 @@ export default {
         console.log("requesting users!")
     return axios.get("/api/user_data");
   },
+  
+  getMatches: function(beltType, weightClass) {
+    console.log("getting matches!")
+return axios.get(`/api/users/${beltType}/${weightClass}`); 
+}
+
   // Gets the book with the given id
   //instead of ID weight & belt and tacked onto URL
 //   getCompetitor: function(beltLevel) {

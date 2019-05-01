@@ -1,27 +1,27 @@
-import axios from "axios";
+// import axios from "axios";
 
-//var db = require("../../../models");
+// //var db = require("../../../models");
 
-export default {
-    getFromGeo: function(search){
-        return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${search}&key=AIzaSyDZYOxZZL8kgIlC4RLfG8Gkfr8xHnZmFTc`)
-    },
+// export default {
+//     getFromGeo: function(search){
+//         return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${search}&key=AIzaSyDZYOxZZL8kgIlC4RLfG8Gkfr8xHnZmFTc`)
+//     },
 
-    signUp: function(userData) {
-        console.log("sending request!");
-        return axios.post('/api/signup', userData)
-    },
+//     signUp: function(userData) {
+//         console.log("sending request!");
+//         return axios.post('/api/signup', userData)
+//     },
 
-     // Gets all books
-    getCompetitors: function() {
-        console.log("requesting users!")
-    return axios.get("/api/competitors");
-  },
+//      // Gets all books
+//     getCompetitors: function() {
+//         console.log("requesting users!")
+//     return axios.get("/api/competitors");
+//   },
 
-  getMatches: function(beltType, weightClass) {
-      console.log("getting matches!")
-  return axios.get(`/api/users/${beltType}/${weightClass}`); 
-  }
+//   getMatches: function(beltType, weightClass) {
+//       console.log("getting matches!")
+//   return axios.get(`/api/users/${beltType}/${weightClass}`); 
+//   }
 
   
   // Gets the book with the given id
@@ -65,4 +65,4 @@ export default {
 //         }
 //   return axios.get("/api/competitors/:beltType/:weightClass", matchCompetitors);
 //     }
-}
+//}
