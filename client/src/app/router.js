@@ -7,12 +7,15 @@ import axios from 'axios';
 import MainLayoutRoutes from "../layouts/routes/mainRoutes";
 import FullPageLayout from "../layouts/routes/fullpageRoutes";
 import ErrorLayoutRoute from "../layouts/routes/errorRoutes";
+import FullScreenMaps from "../components/Map";
 //custom pages
 //import CompetitorPage from "../views/pages/competitorpage";
 //import CompetitorList from "../components/competitor/competitor"
 //import MatchesPage from "../views/pages/matches";
 
 // Main Layout
+const LazyGyms = lazy(() => import("../components/GoogleMaps"));
+
 const LazyEcommerceDashboard = lazy(() => import("../views/dashboard/ecommerceDashboard"));
 const LazyAnalyticsDashboard = lazy(() => import("../views/dashboard/analyticsDashboard"));
 const LazySalesDashboard = lazy(() => import("../views/dashboard/salesDashboard"));
@@ -140,13 +143,13 @@ class Router extends Component {
                   path="/"
                   render={matchprops => (
                      <Suspense fallback={<Spinner />}>
-                        <LazyEcommerceDashboard {...matchprops} />
+                        <LazyRegister {...matchprops} />
                      </Suspense>
                   )}
                />
           
-          <MainLayoutRoutes exact path="/competitorPage" component={CompetitorPage} />
          <MainLayoutRoutes exact path="/matches" component={MatchesPage} />
+
 
 
             <MainLayoutRoutes
@@ -158,7 +161,24 @@ class Router extends Component {
                      </Suspense>
                   )}
                />
-
+               <MainLayoutRoutes
+                  exact
+                  path="/competitors"
+                  render={matchprops => (
+                     <Suspense fallback={<Spinner />}>
+                        <CompetitorPage {...matchprops} />
+                     </Suspense>
+                  )}
+               />
+             <MainLayoutRoutes
+                  exact
+                  path="/gyms"
+                  render={matchprops => (
+                     <Suspense fallback={<Spinner />}>
+                        <LazyGyms {...matchprops} />
+                     </Suspense>
+                  )}
+               />
             
                <MainLayoutRoutes
                   exact

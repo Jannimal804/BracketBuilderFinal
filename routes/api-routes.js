@@ -14,15 +14,16 @@ module.exports = function(app) {
   // });
 
   //Route for matches
-  app.get("/api/posts/:beltType/:weightClass", function(req, res) {
-    db.Post.findAll({
+  app.get("/api/users/:beltLevel/:weightClass", function(req, res) {
+   console.log("JH", req.params.beltLevel)
+    db.User.findAll({
       where: {
-        belt: req.params.beltType,
-        weight: req.params.weightClass
+        beltLevel: req.params.beltLevel,
+        weightClass: req.params.weightClass
       }
     })
-      .then(function(dbPost) {
-        res.json(dbPost);
+      .then(function(dbUsers) {
+        res.json(dbUsers);
       });
   }); 
 

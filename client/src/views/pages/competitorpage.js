@@ -133,45 +133,17 @@ render() {
                   <Card>
                      <CardImg top width="100%" src={match1} alt="Card cap" />
                      <CardBody>
-                        <CardTitle>Card title</CardTitle>
-                        <CardSubtitle>Card subtitle</CardSubtitle>
+                        <CardTitle>US Grappling</CardTitle>
+                        <CardSubtitle>April 27th, 2019</CardSubtitle>
                         <CardText>
-                           Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </CardText>
+Gi and no gi divisions!                        </CardText>
                         <Button className="gradient-purple-bliss">Interested</Button>{" "}
                      </CardBody>
                   </Card>
             </Col>
          </Row>
-         <Row className="row-eq-height float-left">
-               <Col sm="12" md="4">
-                  <Card>
-                     <CardImg top width="100%" src={match1} alt="Card cap" />
-                     <CardBody>
-                        <CardTitle>Card title</CardTitle>
-                        <CardSubtitle>Card subtitle</CardSubtitle>
-                        <CardText>
-                           Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </CardText>
-                        <Button className="gradient-purple-bliss">Interested</Button>{" "}                     </CardBody>
-                  </Card>
-            </Col>
-         </Row>
-         <Row className="row-eq-height">
-               <Col sm="12" md="4">
-                  <Card>
-                     <CardImg top width="100%" src={match1} alt="Card cap" />
-                     <CardBody>
-                        <CardTitle>Card title</CardTitle>
-                        <CardSubtitle>Card subtitle</CardSubtitle>
-                        <CardText>
-                           Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </CardText>
-                        <Button className="gradient-purple-bliss">Interested</Button>{" "}                     </CardBody>
-                  </Card>
-            </Col>
-         </Row>
-      <h1>Past Events:</h1>
+        
+        
 
    
      

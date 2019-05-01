@@ -19,7 +19,7 @@ class blankPage extends Component {
       console.log("here");
       const self = this;
       axios.get("/api/competitors").then(function(res) {
-         console.log(res.data)
+        // console.log(res.data)
             self.setState({allCompetitors: res.data});
          });     
    }
@@ -36,7 +36,7 @@ class blankPage extends Component {
       return (
          
          <Fragment>
-             <ContentHeader>Matches</ContentHeader>
+             <ContentHeader>Competitors:</ContentHeader>
             {this.state.allCompetitors.map(allCompetitors => {
                return(
                   <Card>

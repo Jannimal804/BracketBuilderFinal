@@ -13,32 +13,35 @@ import {
 
 
 class MatchesPage extends Component {
-   state = {
-      allCompetitors: []
-   }
+
+   constructor(props) {
+      super(props);
+      this.state = {allCompetitors: []};
+    }
+
    componentDidMount() {
       console.log("here");
       const self = this;
-      axios.get("/api/competitors").then(function(res) {
+      API.getMatches("white","feather").then(function(res) {
          console.log(res.data)
             self.setState({allCompetitors: res.data});
          });     
    }
 
-   loadUsers = () => {
-      API.getCompetitors()
-        .then(res =>
-          this.setState({ users: res.data, firstName: "", lastName: "", beltColor: "", weightLevel: "" })
-        )
-        .catch(err => console.log(err));
-    };
+   // loadUsers = () => {
+   //    API.getCompetitors()
+   //      .then(res =>
+   //        this.setState({ users: res.data, firstName: "", lastName: "", beltColor: "", weightLevel: "" })
+   //      )
+   //      .catch(err => console.log(err));
+   //  };
 
    render() {
       return (
          
          <Fragment>
              <ContentHeader>Here</ContentHeader>
-             <ContentHeader>Betch</ContentHeader>
+             <ContentHeader>Matches Betch a letch!</ContentHeader>
             {this.state.allCompetitors.map(allCompetitors => {
              return(
                   <Card>
@@ -50,6 +53,22 @@ class MatchesPage extends Component {
               } )} 
          </Fragment>
       );
+
+      
+      // function Match(props) {
+      //    const myMatches = props.myMatches;
+      //    return (
+      //      <div>
+      //        <h1>Hello!</h1>
+      //        {myMatches.length > 0 &&
+      //          <h2>
+      //            You have {myMatches.length} matches.
+      //          </h2>
+      //        }
+      //      </div>
+      //    );
+      //  }
+       
    }
 }
 

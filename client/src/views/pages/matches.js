@@ -12,23 +12,23 @@ import {
 } from "reactstrap";
 
 
-class MatchesPage extends Component {
+class MatchesPage1 extends Component {
    state = {
       allCompetitors: []
    }
-   componentDidMount() {
-      console.log("here");
-      const self = this;
-      axios.get("/api/competitors").then(function(res) {
-         console.log(res.data)
-            self.setState({allCompetitors: res.data});
-         });     
-   }
+   // componentDidMount() {
+   //    console.log("here");
+   //    //const self = this;
+   //    API.getMatches("white","feather").then(function(res) {
+   //       console.log(res.data)
+   //          this.setState({allCompetitors: res.data});
+   //       });     
+   // }
 
    loadUsers = () => {
       API.getCompetitors()
         .then(res =>
-          this.setState({ users: res.data, firstName: "", lastName: "", beltColor: "", weightLevel: "" })
+          this.setState({ users: res.data, firstName: "", lastName: "", beltLevel: "", weightClass: "" })
         )
         .catch(err => console.log(err));
     };
@@ -37,7 +37,7 @@ class MatchesPage extends Component {
       return (
          
          <Fragment>
-             <ContentHeader>Here</ContentHeader>
+             <ContentHeader>!Here!</ContentHeader>
              <ContentHeader>Matches Betch a letch</ContentHeader>
             {this.state.allCompetitors.map(allCompetitors => {
              return(
@@ -52,22 +52,21 @@ class MatchesPage extends Component {
       );
 
       
-      function Match({ match}) {
-         if (!match) {
-           return null;
-         }
+      // function Match(props) {
+      //    const myMatches = props.myMatches;
+      //    return (
+      //      <div>
+      //        <h1>Hello!</h1>
+      //        {myMatches.length > 0 &&
+      //          <h2>
+      //            You have {myMatches.length} matches.
+      //          </h2>
+      //        }
+      //      </div>
+      //    );
+      //  }
        
-         if (!match.length) {
-           return <p>Sorry, the list is empty.</p>;
-         } else {
-           return (
-             <div>
-               {match.map(allCompetitors => <ListItem { }/>)}
-             </div>
-           );
-         }
-       }
    }
 }
 
-export default MatchesPage;
+export default MatchesPage1;

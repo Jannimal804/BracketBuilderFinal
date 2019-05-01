@@ -33,7 +33,7 @@ class SideMenuContent extends Component {
       return (
          <SideMenu className="sidebar-content" toggleSidebarMenu={this.props.toggleSidebarMenu}>
             <SideMenu.MenuSingleItem badgeColor="info">
-               <NavLink to="/" activeclassname="active">
+               <NavLink to="/competitors" activeclassname="active">
                   <i className="menu-icon">
                      <Users size={18} />
                   </i>
@@ -64,7 +64,7 @@ class SideMenuContent extends Component {
                   <span className="menu-item-text">Chat</span>
                </NavLink>
             </SideMenu.MenuSingleItem>
-            <SideMenu.MenuSingleItem>
+            {/* <SideMenu.MenuSingleItem>
                <NavLink to="/contacts" activeclassname="active">
                   <i className="menu-icon">
                      <Users size={18} />
@@ -423,7 +423,7 @@ class SideMenuContent extends Component {
                   </i>
                   <span className="menu-item-text">Support</span>
                </a>
-            </SideMenu.MenuSingleItem>
+            </SideMenu.MenuSingleItem> */}
          </SideMenu>
       );
    }

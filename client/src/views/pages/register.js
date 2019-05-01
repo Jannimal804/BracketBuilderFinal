@@ -122,7 +122,7 @@ class Register extends Component {
       const { firstName, lastName, beltLevel, weightClass, email, password } = this.state;
       return (
          <div className="container">
-                   <p> Hello {this.state.firstName} {this.state.lastName} {this.state.beltLevel} {this.state.weightClass} {this.state.email} {this.state.password}
+                   <p> Hello {this.state.firstName} {this.state.lastName} 
         </p>
             <Row className="full-height-vh">
                <Col xs="12" className="d-flex align-items-center justify-content-center">
