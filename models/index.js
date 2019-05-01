@@ -2,18 +2,31 @@
 
 const fs = require('fs');
 const path = require('path');
+const mysql = require('mysql2')
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-//let sequelize;
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+  connection = mysql.createConnection
+({
+  host: 'localhost',
+  user: 'root',
+  password: 'Gobby911!',
+  database: 'reactbb'
+});
+};
+
+//let sequelize;
+// if (config.use_env_variable) {
+//   var sequelize = new Sequelize(process.env[config.use_env_variable]);
+// } else {
+//   var sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 fs
   .readdirSync(__dirname)
